@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PopBehaviour : MonoBehaviour {
 
+	public GameObject[] images;
     public bool agitated = false;
     private float moveTick = 1.0f;
 

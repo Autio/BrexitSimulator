@@ -8,7 +8,6 @@ public class GameController : MonoBehaviour {
 	public GameObject s;
 	public GameObject ni;
 
-	public List<string> buttonTexts = new List<string>();
 
 	// Use this for initialization
 	void Start () {
