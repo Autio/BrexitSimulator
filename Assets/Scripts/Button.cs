@@ -6,6 +6,7 @@ public class Button : MonoBehaviour {
 		private GameController gc;
 		private GameObject buttonText;
 		public List<string> buttonTexts = new List<string>();
+		public GameObject heartBeat;
 
 
 	void Start () {
@@ -23,7 +24,7 @@ public class Button : MonoBehaviour {
 				buttonTexts.Add("Privatise\nRoyal Mail");
 				buttonTexts.Add("Bail out\nbanks");
 				buttonTexts.Add("Loosen\nregulation");
-				buttonTexts.Add("Contracts\nto friends");
+				buttonTexts.Add("Grant contracts\nto friends");
 				buttonTexts.Add("Close\nlibraries");
 				buttonTexts.Add("Redefine\nchild poverty");
 				buttonTexts.Add("Demonise\nIslam");
@@ -51,8 +52,25 @@ public class Button : MonoBehaviour {
 	{
 		Debug.Log ("Button pressed");
 		gc.ButtonReaction();
+		CreateHeartBeat ();
 
 		// change text
+		RefreshText();
+	}
+
+	public void CreateHeartBeat()
+	{
+		GameObject hb = (GameObject)Instantiate(heartBeat, new Vector3(transform.position.x, transform.position.y, -5.0f), Quaternion.identity);
+		Destroy (hb.gameObject, 3.8f);
+
+
+	}
+
+	public void RefreshText()
+
+	{
+
 		buttonText.GetComponent<TextMesh>().text = buttonTexts[Random.Range(0, buttonTexts.Count)];
 	}
+
 }

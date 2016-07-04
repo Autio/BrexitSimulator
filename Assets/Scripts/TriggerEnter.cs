@@ -18,11 +18,11 @@ public class TriggerEnter : MonoBehaviour {
 	{
 
 		if (collider.tag == "nordicWin") {
-			Debug.Log ("Norwin");
+			gc.GetComponent<GameController> ().SpawnText ("Scotland joins the Nordic countries");
 		}
 
 		if (collider.tag == "irishWin") {
-			Debug.Log ("Norwin");
+			gc.GetComponent<GameController> ().SpawnText ("Northern Ireland and the Republic of Ireland unite");
 		}
 
 
