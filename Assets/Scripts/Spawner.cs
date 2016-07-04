@@ -21,6 +21,25 @@ public class Spawner : MonoBehaviour {
 			s.transform.SetParent (this.transform);
 			if (spriteType >= 0 && spriteType < 4) {
 				s.GetComponent<PopBehaviour> ().images [spriteType].SetActive (true);
+
+				// manual hack collider radiuses
+				if(spriteType == 0)
+				{
+					s.GetComponent<CircleCollider2D> ().radius = 1.5f;
+				}
+				else if (spriteType == 1)
+				{
+					s.GetComponent<CircleCollider2D> ().radius = 2.75f;
+				}	
+				else if (spriteType == 2)
+				{
+					s.GetComponent<CircleCollider2D> ().radius = 2.5f;
+				}	
+				else if (spriteType == 3)
+				{
+					s.GetComponent<CircleCollider2D> ().radius = 2f;
+				}
+
 			}
 
 		}

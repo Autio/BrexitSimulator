@@ -8,9 +8,11 @@ public class PopBehaviour : MonoBehaviour {
     private float moveTick = 1.0f;
 
 	private float standardSpeed = 30;
+	public Color targetColor;
+
     // Use this for initialization
 	void Start () {
-	        
+		this.GetComponent<Renderer> ().material.SetColor ("_Albedo", targetColor);
 	}
 	
 	// Update is called once per frame
@@ -41,10 +43,20 @@ public class PopBehaviour : MonoBehaviour {
 		moveTick += Random.Range (0.1f, 0.2f);
     }
 
+	// move in a vector from mouse click to unit center
+	public void DirectedMove(float speed = 30.0f)
+	{
+		Vector2 inputPos = Input.mousePosition;
+		Vector2 thisPos = transform.position;
+		GetComponent<Rigidbody2D>().AddForce((inputPos - thisPos) * speed);
+
+	}
+
 	void OnMouseDown()
 	{
 		Debug.Log ("pop clicked");
 		BrownianMove (60);
 	}
 		
+
 }
