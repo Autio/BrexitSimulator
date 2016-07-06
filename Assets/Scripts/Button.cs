@@ -36,11 +36,12 @@ public class Button : MonoBehaviour {
 				buttonTexts.Add("Demonise\nHuman\nRights\nAct");
 				buttonTexts.Add("Demonise\nAsylum\nSeekers");
 				buttonTexts.Add("Cut\npolice\nfunds");
-				buttonTexts.Add("Stoke\nislamophobia");
+				buttonTexts.Add("Stoke\nislamo-\nphobia");
 				buttonTexts.Add("Punish\nthe\npoor");
 				buttonTexts.Add("Cut\nlegal\naid");
 				buttonTexts.Add("Shelter\ntax\nhavens");
-				buttonTexts.Add("Dismantle\nmanufacturing");
+				buttonTexts.Add("Dismantle\nmanu-\nfacturing");
+				buttonTexts.Add("Ignore\nworking class\nconcerns");
 
 
 

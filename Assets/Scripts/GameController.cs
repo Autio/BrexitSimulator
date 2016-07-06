@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour {
 	public int dayCount;
 	private float dayTick = 2.0f;
 	private bool ticking = true;
+	private bool ended = false;
 
 	// Use this for initialization
 	void Start () {
@@ -87,7 +88,7 @@ public class GameController : MonoBehaviour {
 		button.GetComponent<Button> ().CreateHeartBeat ();
 		// push parts away
 		// push s
-		s.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-0.1f, 0.7f), Random.Range(-0.2f, 0.5f)) * Random.Range(150, 250));
+		s.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-0.1f, 0.7f), Random.Range(-0.2f, 0.3f)) * Random.Range(150, 250));
 
 		// push ni
 		ni.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 0.0f), Random.Range(-0.4f, 0.4f)) * Random.Range(80, 120));
@@ -96,9 +97,10 @@ public class GameController : MonoBehaviour {
 		ew.transform.localScale *= .98f;
 
 		// win condition
-		if (ew.transform.localScale.x < 1f) {
+		if (ew.transform.localScale.x < 1f && !ended) {
 
 			SpawnText ("England gains independence");
+			ended = true;
 		}
 	}
 
